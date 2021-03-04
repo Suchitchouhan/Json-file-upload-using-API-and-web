@@ -1,0 +1,21 @@
+<form method="POST" enctype="multipart/form-data">
+	{% csrf_token %}
+	Jsonfile <input type="file" name="file" placeholder="Enter json File">
+	<button type="submit">POST</button>
+</form>
+{% if status %}
+<p>{{ status }}</p>
+{% endif %}
+
+
+{% for x in account %}
+Id : {{ x.Ido }}<br>
+User Id : {{ x.user_idO }}<br>
+amount : {{ x.amount }}<br>
+Coins balance : {{ x.coins_balance }}<br>
+txn type : {{ x.txn_type }}<br>
+txn info : {{ x.txn_info }}<br>
+action : {{ x.action }}<br>
+time : {{ x.time }}<br>
+<br>
+{% endfor %}
